@@ -1,0 +1,84 @@
+@media screen and (max-width: 767px)
+{
+    .header 
+    {
+        width: 100%;
+    }
+    .header nav 
+    {
+        display: none;
+    }
+    .header_info
+    {
+        padding-left: 10px;
+        background-image: url("../public/artwork_mobile.png");
+        background-position: center;
+        background-size: cover;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .wallpaper 
+    {
+        display: none;
+    }
+    .short_notice
+    {
+        gap: 1.5rem;
+        flex-direction: column;
+    }
+    .logo
+     {
+        height: 200px;
+        width: 300px;
+     }
+
+     /* HEADER FINISH */
+
+     #hero
+     {
+        min-height: 100svh;
+        max-height: auto;
+     }
+     #hero h1 
+     {
+        font-size: 2rem;
+        margin-left: 30px;
+     }
+     #hero h1::after
+     {
+        width: 45px;
+        height: 45px;
+        left: -20px;
+     }
+     .hero_content
+     {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+     }
+     .separator
+     {
+        display: none;
+     }
+     .card 
+     {
+        height: 60px;
+     }
+     .card, .slider 
+     {
+        width: 80%;
+     }
+     .usluge 
+     {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+     }
+     .card_description
+     {
+        width: 80%;
+     }
+}
