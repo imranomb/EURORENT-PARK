@@ -2,6 +2,7 @@ let cards = document.querySelectorAll(".card");
 let descriptions = document.querySelectorAll(".card_description")
 let arrows = document.querySelectorAll(".arrow");
 let currentActive = 4;
+let colors = document.querySelectorAll(".color_c");
 
 let sections = document.querySelectorAll(".section");
 
@@ -22,6 +23,13 @@ const observer = new IntersectionObserver((obj) => {
             document.getElementById("contact_from").classList.toggle("turnOn");
             document.getElementById("pricing").classList.toggle("turnOn");
             observer.unobserve(entry.target);
+        }
+        else if(entry.target.getAttribute("id") == "faq" && entry.isIntersecting)
+        {
+            const faqs = document.querySelectorAll(".faq");
+            faqs.forEach(faq => {
+                faq.classList.toggle("show");
+            })
         }
     })
 },
@@ -70,4 +78,34 @@ function arrow_reset()
     arrows.forEach(arrow => {
         if(arrow.classList.contains("open")) arrow.classList.remove("open");
     })
+}
+
+colors.forEach(color => {
+    color.addEventListener("change", () => {
+        if(color.getAttribute("id") == "color_1") changePrimaryColor();
+        else if(color.getAttribute("id") == "color_2") changeSecondaryColor();
+        else if(color.getAttribute("id") == "color_3") changeThirdColor();
+    })
+})
+
+function changePrimaryColor()
+{
+    document.getElementById("reservation").style.setProperty("--primary_color", `${colors[0].value}`)
+    document.getElementById("faq").style.setProperty("--primary_color", `${colors[0].value}`)
+    document.getElementById("hero").style.setProperty("--primary_color", `${colors[0].value}`)
+    document.getElementById("main").style.setProperty("--primary_color", `${colors[0].value}`)
+}
+function changeSecondaryColor()
+{
+    document.getElementById("reservation").style.setProperty("--secondary_color", `${colors[1].value}`)
+    document.getElementById("faq").style.setProperty("--secondary_color", `${colors[1].value}`)
+    document.getElementById("hero").style.setProperty("--secondary_color", `${colors[1].value}`)
+    document.getElementById("main").style.setProperty("--secondary_color", `${colors[1].value}`)
+}
+function changeThirdColor()
+{
+    document.getElementById("reservation").style.setProperty("--third_color", `${colors[2].value}`)
+    document.getElementById("faq").style.setProperty("--third_color", `${colors[2].value}`)
+    document.getElementById("hero").style.setProperty("--third_color", `${colors[2].value}`)
+    document.getElementById("main").style.setProperty("--third_color", `${colors[2].value}`)
 }

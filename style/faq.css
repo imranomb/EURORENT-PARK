@@ -4,13 +4,13 @@
     position: relative;
     width: 100%;
     height: 100svh;
-    background-color: #090C02;
+    background-color: var(--primary_color);
     overflow: hidden;
 }
 #faq h1 
 {
     font-size: 5.5rem;
-    color: white;
+    color: var(--third_color);
     margin-left: 50px;
     margin-top: 50px;
     position: relative;
@@ -22,7 +22,7 @@
     position: absolute;
     height: 100px;
     width: 100px;
-    background-color: #A72608;
+    background-color: var(--secondary_color);
     border-radius: 50%;
     top: -5px;
     left: -30px;
@@ -44,15 +44,61 @@
     grid-template-columns: repeat(2, 300px);
     grid-gap: 1rem 2rem;
 }
+.faq 
+{
+    opacity: 0;
+}
 .faq h3 
 {
-    color: #A72608
+    color: var(--secondary_color)
 }
 .faq p 
 {
-    color: white;
+    color: var(--third_color);
 }
 .faq1, .faq2, .faq3, .faq4
 {
-    border-bottom: 2px solid #A72608;
+    border-bottom: 2px solid var(--secondary_color);
+}
+.faq1.show 
+{
+    animation: faq_anim 400ms ease-in forwards;
+}
+.faq2.show 
+{
+    animation: faq_anim 400ms ease-in forwards;
+    animation-delay: 100ms;
+}
+.faq3.show 
+{
+    animation: faq_anim 400ms ease-in forwards;
+    animation-delay: 200ms;
+}
+.faq4.show 
+{
+    animation: faq_anim 400ms ease-in forwards;
+    animation-delay: 300ms;
+}
+.faq5.show 
+{
+    animation: faq_anim 400ms ease-in forwards;
+    animation-delay: 400ms;
+}
+.faq6.show 
+{
+    animation: faq_anim 400ms ease-in forwards;
+    animation-delay: 500ms;
+}
+@keyframes faq_anim 
+{
+    0%
+    {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    100% 
+    {
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }

@@ -1,10 +1,13 @@
 #hero 
 {
+    --primary_color: #090C02;
+    --secondary_color: #A72608;
+    --third_color: white;
     scroll-snap-align: center;
     position: relative;
     width: 100%;
     height: 100svh;
-    background-color: #090C02;
+    background-color: var(--primary_color);
     overflow: hidden;
     --card1_border: 40%;
     --card2_border: 40%;
@@ -13,7 +16,7 @@
 #hero h1 
 {
     font-size: 5.5rem;
-    color: white;
+    color: var(--third_color);
     margin-left: 50px;
     margin-top: 50px;
     position: relative;
@@ -25,7 +28,7 @@
     position: absolute;
     height: 100px;
     width: 100px;
-    background-color: #A72608;
+    background-color: var(--secondary_color);
     border-radius: 50%;
     top: -5px;
     left: -30px;
@@ -58,7 +61,7 @@
     padding: 6px;
     border-radius: 20px;
     width: 400px;
-    background-color: #A72608;
+    background-color: var(--secondary_color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -80,7 +83,7 @@
     left: 0;
     bottom: 0;
     overflow: hidden;
-    background-color: white;
+    background-color: var(--third_color);
     filter: blur(3px);
     border-radius: 20px;
     transition: all 300ms ease-in-out;
@@ -89,7 +92,7 @@
 {
     content: "";
     position: absolute;
-    background-color: #A72608;
+    background-color: var(--secondary_color);
     inset: 4px;
     border-radius: 20px;
 }
@@ -170,13 +173,13 @@
     display: flex;
     justify-content: start;
     gap: 1.3rem;
-    color: white;
+    color: var(--third_color);
     align-items: center;
     z-index: 2;
 }
 .icon
 {
-    background-color: white;
+    background-color: var(--third_color);
     border-radius: 50%;
 }
 .arrow 
@@ -194,8 +197,8 @@
 {
     display: grid;
     grid-template-rows: 0fr;
-    color: #A72608;
-    background-color: white;
+    color: var(--secondary_color);
+    background-color: var(--third_color);
     left: 0;
     z-index: -1;
     transition: grid-template-rows 300ms;
@@ -224,7 +227,7 @@
 {
     width: 2px;
     height: 500px;
-    background-color: #A72608;
+    background-color: var(--secondary_color);
 }
 #wave 
 {
@@ -271,7 +274,7 @@
 .slider_arrow
 {
     position: relative;
-    background-color: white;
+    background-color: var(--third_color);
 }
 #right_arrow:hover, #left_arrow:hover
 {
@@ -317,6 +320,6 @@
 .slider_desc h2 
 {
     margin-left: 5px;
-    color: white;
+    color: var(--third_color);
     font-weight: 400;
 }
