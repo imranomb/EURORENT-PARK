@@ -112,10 +112,3 @@ function changeThirdColor()
     document.getElementById("hero").style.setProperty("--third_color", `${colors[2].value}`)
     document.getElementById("main").style.setProperty("--third_color", `${colors[2].value}`)
 }
-$(function() { $("#e1").daterangepicker({}) });
-$("#e1").daterangepicker({
-    datepickerOptions : {
-        numberOfMonths : 2,
-        initialText : 'Select period...'
-    }
-});
