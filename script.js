@@ -24,6 +24,7 @@ const observer = new IntersectionObserver((obj) => {
             document.getElementById("contact_from").classList.toggle("turnOn");
             document.getElementById("pricing").classList.toggle("turnOn");
             observer.unobserve(entry.target);
+            console.log("asfalt")
         }
         else if(entry.target.getAttribute("id") == "faq" && entry.isIntersecting)
         {
