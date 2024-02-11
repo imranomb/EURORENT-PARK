@@ -10,7 +10,7 @@ const observer = new IntersectionObserver((obj) => {
     obj.forEach(entry => {
         if(entry.target.getAttribute("id") == "hero" && entry.isIntersecting)
         {
-            document.getElementById("naslov").classList.toggle("turnOn");
+            document.getElementById("naslov2").classList.toggle("turnOn");
             document.getElementById("wave").classList.toggle("turnOn");
             cards.forEach(card => {
                 card.classList.toggle("turnOn")
@@ -20,16 +20,19 @@ const observer = new IntersectionObserver((obj) => {
         }
         else if(entry.target.getAttribute("id") == "reservation" && entry.isIntersecting)
         {
+            document.getElementById("naslov3").classList.toggle("turnOn");
             document.getElementById("contact_from").classList.toggle("turnOn");
             document.getElementById("pricing").classList.toggle("turnOn");
             observer.unobserve(entry.target);
         }
         else if(entry.target.getAttribute("id") == "faq" && entry.isIntersecting)
         {
+            document.getElementById("naslov4").classList.toggle("turnOn");
             const faqs = document.querySelectorAll(".faq");
             faqs.forEach(faq => {
                 faq.classList.toggle("show");
             })
+            observer.unobserve(entry.target);
         }
     })
 },
