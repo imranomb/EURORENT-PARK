@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="style/reservation.css"/>
     <link rel="stylesheet" href="style/mobile.css"/>
     <link rel="stylesheet" href="style/faq.css"/>
+    <link rel="stylesheet" href="style/footer.css"/>
+    <link href="jquery-ui.min.css" rel="stylesheet">
+    <link href="jquery.comiseo.daterangepicker.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -48,40 +51,31 @@
         <!-- HEADER FINISH -->
 
         <div id="hero" class="section">
-            <div id="naslov" class="naslov">
+            <div id="naslov2" class="naslov">
                 <h1>ŠTA VAM NUDIMO?</h1>
             </div>
             <div class="hero_content">
                 <div class="usluge">
-                    <div id="card_1" class="card" data-id=0>
-                        <div class="card_info">
-                            <img class="icon" src="public/lock_icon.png" width="50px" height="50px"/>
-                            <h2>SIGURNOST</h2>
+                    <div class="card" id="card_1">
+                        <div class="icon_card">
+                            <img src="./public/money.png"/>
                         </div>
-                        <img class="arrow"  src="public/arrow.png" width="50px" height="50px"/>
+                        <h2>CIJENA</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugiat fuga dolor consequuntur..</p>
                     </div>
-                    <div class="card_description">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure repellat cum vitae molestiae, ducimus harum libero repudiandae numquam inventore culpa hic ab rerum fugit, molestias sed dolor deserunt facere sapiente.</p>
-                    </div>
-                    <div id="card_2" class="card" data-id=1>
-                        <div class="card_info">
-                            <img class="icon" src="public/highfive.png" width="50px" height="50px"/>
-                            <h2>VRHUNSKA USLUGA </h2>
+                    <div class="card" id="card_2">
+                        <div class="icon_card">
+                            <img src="./public/lock_icon.png"/>
                         </div>
-                        <img class="arrow" src="public/arrow.png" width="50px" height="50px"/>
+                        <h2>SIGURNOST</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugiat fuga dolor consequuntur..</p>
                     </div>
-                    <div class="card_description">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure repellat cum vitae molestiae, ducimus harum libero repudiandae numquam inventore culpa hic ab rerum fugit, molestias sed dolor deserunt facere sapiente.</p>
-                    </div>
-                    <div id="card_3" class="card" data-id=2>
-                        <div class="card_info">
-                            <img class="icon" src="public/money.png" width="50px" height="50px"/>
-                            <h2>ODLIČNA CIJENA</h2>
+                    <div class="card" id="card_3">
+                        <div class="icon_card">
+                            <img src="./public/highfive.png"/>
                         </div>
-                        <img class="arrow"  src="public/arrow.png" width="50px" height="50px"/>
-                    </div>
-                    <div class="card_description">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure repellat cum vitae molestiae, ducimus harum libero repudiandae numquam inventore culpa hic ab rerum fugit, molestias sed dolor deserunt facere sapiente.</p>
+                        <h2>USLUGA</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugiat fuga dolor consequuntur..</p>
                     </div>
                 </div>
                 <div class="separator"></div>
@@ -99,7 +93,7 @@
         </div>
         
         <div id="reservation" class="section">
-            <div id="naslov" class="naslovx">
+            <div id="naslov3" class="naslov">
                 <h1>REZERVACIJE</h1>
             </div>
             <div class="reservation_container">
@@ -167,7 +161,7 @@
             </div>
         </div>
         <div id="faq" class="section">
-            <div id="naslov" class="naslovx">
+            <div id="naslov4" class="naslov">
                 <h1>FAQ</h1>
             </div>
             <div class="faq_container">
@@ -202,6 +196,9 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2878.194574380444!2d18.32880557647057!3d43.831063371094196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758ca212b83ca53%3A0x954bbb1a7cea3033!2sEuro-Rent!5e0!3m2!1sbs!2sba!4v1707243294845!5m2!1sbs!2sba" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
+            <div id="footer">
+                <span>@Copyright EuroRent Park 2024.</span>
+            </div>
         </div>
     </div>
     <div class="color_changer">
@@ -214,4 +211,8 @@
     </div>
 </body>
     <script src="script.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="moment.min.js"></script>
+    <script src="jquery.comiseo.daterangepicker.js"></script>
 </html>
