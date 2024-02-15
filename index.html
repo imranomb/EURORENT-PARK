@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="style/header.css"/>
     <link rel="stylesheet" href="style/hero.css"/>
     <link rel="stylesheet" href="style/reservation.css"/>
-    <link rel="stylesheet" href="style/mobile.css"/>
     <link rel="stylesheet" href="style/faq.css"/>
+    <link rel="stylesheet" href="style/mobile.css"/>
     <link rel="stylesheet" href="style/footer.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
     <title>Document</title>
 </head>
 <body>
@@ -53,28 +55,32 @@
                 <h1>ŠTA VAM NUDIMO?</h1>
             </div>
             <div class="hero_content">
-                <div class="usluge">
-                    <div class="card" id="card_1">
-                        <div class="icon_card">
-                            <img src="./public/money.png"/>
+                <div class="usluge_x">
+                    <div class="gradiant" id="left"></div>
+                    <div class="usluge">
+                        <div class="card" id="card_1">
+                            <div class="icon_card">
+                                <img src="./public/money.png"/>
+                            </div>
+                            <h2>CIJENA</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugiat fuga dolor consequuntur..</p>
                         </div>
-                        <h2>CIJENA</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugiat fuga dolor consequuntur..</p>
-                    </div>
-                    <div class="card" id="card_2">
-                        <div class="icon_card">
-                            <img src="./public/lock_icon.png"/>
+                        <div class="card" id="card_2">
+                            <div class="icon_card">
+                                <img src="./public/lock_icon.png"/>
+                            </div>
+                            <h2>SIGURNOST</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugiat fuga dolor consequuntur..</p>
                         </div>
-                        <h2>SIGURNOST</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugiat fuga dolor consequuntur..</p>
-                    </div>
-                    <div class="card" id="card_3">
-                        <div class="icon_card">
-                            <img src="./public/highfive.png"/>
+                        <div class="card" id="card_3">
+                            <div class="icon_card">
+                                <img src="./public/highfive.png"/>
+                            </div>
+                            <h2>USLUGA</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugiat fuga dolor consequuntur..</p>
                         </div>
-                        <h2>USLUGA</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugiat fuga dolor consequuntur..</p>
                     </div>
+                    <div class="gradiant" id="right"></div>
                 </div>
                 <div class="separator"></div>
                 <div id="slider" class="slider">
@@ -102,6 +108,7 @@
                             <input type="text" placeholder="Ime"/>
                             <input type="text" placeholder="Mail"/>
                             <input type="tel" placeholder="Tel. broj"/>
+                            <input id="coming_date" type="datetime-local" placeholder="Odaberi datum">
                             <textarea placeholder="Poruka"></textarea>
                             <div class="submit">
                                 <button id="submit_button">PARKIRAJ</button>
@@ -160,7 +167,7 @@
         </div>
         <div id="faq" class="section">
             <div id="naslov4" class="naslov">
-                <h1>FAQ</h1>
+                <h1 id="faq_n">FAQ</h1>
             </div>
             <div class="faq_container">
                 <div class="faq_content">
@@ -191,7 +198,7 @@
                 </div>
                 <div class="separator"></div>
                 <div class="location">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2878.194574380444!2d18.32880557647057!3d43.831063371094196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758ca212b83ca53%3A0x954bbb1a7cea3033!2sEuro-Rent!5e0!3m2!1sbs!2sba!4v1707243294845!5m2!1sbs!2sba" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe id="google_maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2878.194574380444!2d18.32880557647057!3d43.831063371094196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758ca212b83ca53%3A0x954bbb1a7cea3033!2sEuro-Rent!5e0!3m2!1sbs!2sba!4v1707243294845!5m2!1sbs!2sba" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             <div id="footer">
@@ -199,14 +206,14 @@
             </div>
         </div>
     </div>
-    <div class="color_changer">
-        <label for="color_1">Primary: </label>
-        <input class="color_c" type="color" value="#090C02" id="color_1" name="color_1"/>
-        <label for="color_2">Secondary: </label>
-        <input class="color_c" type="color" value="#A72608" id="color_2" name="color_2"/>
-        <label for="color_3">Third: </label>
-        <input class="color_c" type="color" value="#ffffff" id="color_3" name="color_3"/>
-    </div>
 </body>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="script.js"></script>
+    <script>
+        flatpickr("#coming_date", {
+            mode: "range",
+            dateFormat: "d.m.Y",
+            minDate: "today",
+        });
+    </script>
 </html>

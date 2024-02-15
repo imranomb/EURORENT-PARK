@@ -1,5 +1,9 @@
 @media screen and (max-width: 767px)
 {
+   #main 
+   {
+      scroll-snap-type: none;
+   }
     .header 
     {
         width: 100%;
@@ -37,8 +41,10 @@
 
      #hero
      {
-        min-height: 100svh;
-        max-height: auto;
+        scroll-snap-align: none;
+        padding-bottom: 100px;
+        overflow: none;
+         height: auto;
      }
      #hero h1 
      {
@@ -56,29 +62,102 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 0;
+        gap: 1.5rem;
+     }
+     .usluge_x
+     {
+      width: 100%;
+      margin-top: 120px;
+     }
+     .slider 
+     {
+      width: 90%;
      }
      .separator
      {
         display: none;
      }
-     .card 
+
+     /* REZERVACIJE */
+
+     #reservation
      {
-        height: 60px;
+        overflow: auto;
+        scroll-snap-align: none;
+        height: auto;
      }
-     .card, .slider 
+     #reservation h1 
      {
-        width: 80%;
+        font-size: 2rem;
+        margin-left: 30px;
      }
-     .usluge 
+     #reservation h1::after
      {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        width: 45px;
+        height: 45px;
+        left: -20px;
      }
-     .card_description
+     .reservation_content
      {
-        width: 80%;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         height: auto;
      }
+     .pricing
+     {
+      width: 90%;
+     }
+     .contact_form
+     {
+      margin-top: 120px;
+      width: 90%;
+     }
+     form input, textarea
+     {
+      width: 90%;
+     }
+     #faq
+     {
+      position: relative;
+      scroll-snap-align: none;
+      height: auto;
+      overflow: auto;
+      width: 100%;
+     }
+     #faq_n
+     {
+      font-size: 2rem !important
+     }
+     #faq h1::after
+     {
+        width: 45px !important;
+        height: 45px !important;
+        left: -20px !important;
+     }
+     .faq_container
+     {
+      margin-top: 120px;
+      flex-direction: column;
+      width: 100% !important;
+      align-items: center !important;
+      justify-content: center !important;
+     }
+     .faq_content
+      {
+         width: 90%;
+         display: grid;
+         grid-template-rows: repeat(3, 1fr) !important;
+         grid-template-columns: repeat(2, 1fr) !important;
+         grid-gap: 1rem 2rem;
+      }
+      #google_maps
+      {
+         width: 90%;
+         height: 450px;
+      }
+      .faq_3, .faq_4
+      {
+         padding-bottom: 15px;
+      }
 }

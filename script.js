@@ -3,6 +3,8 @@ let descriptions = document.querySelectorAll(".card_description")
 let arrows = document.querySelectorAll(".arrow");
 let currentActive = 4;
 let colors = document.querySelectorAll(".color_c");
+let slidePath = 0;
+let slideGap = 40;
 
 let sections = document.querySelectorAll(".section");
 
@@ -10,6 +12,7 @@ const observer = new IntersectionObserver((obj) => {
     obj.forEach(entry => {
         if(entry.target.getAttribute("id") == "hero" && entry.isIntersecting)
         {
+            console.log("glicing")
             document.getElementById("naslov2").classList.toggle("turnOn");
             document.getElementById("wave").classList.toggle("turnOn");
             cards.forEach(card => {
@@ -38,44 +41,13 @@ const observer = new IntersectionObserver((obj) => {
     })
 },
 {
-    threshold: 1
+    threshold: 0
 }
 )
 
 sections.forEach(section => {
     observer.observe(section);
 })
-
-cards.forEach(card => {
-    card.addEventListener("click", () => {
-        arrow_reset();
-        descriptions.forEach(desc => {
-            if(desc.classList.contains("active")) desc.classList.remove("active");
-        })
-        if(currentActive == card.dataset.id) {
-            currentActive = 4;
-            return;
-        }
-        else 
-        {
-            currentActive = card.dataset.id;
-            descriptions[currentActive].classList.toggle("active");
-            arrows[currentActive].classList.toggle("open");
-            selectedCard(currentActive);
-        }
-    })
-})
-
-function selectedCard(id)
-{
-    const x = document.getElementById("hero");
-    x.style.setProperty("--card1_border", "40%");
-    x.style.setProperty("--card2_border", "40%");
-    x.style.setProperty("--card3_border", "40%");
-    if(id == 0) x.style.setProperty("--card1_border", "100%");
-    else if(id == 1) x.style.setProperty("--card2_border", "100%");
-    else if(id == 2) x.style.setProperty("--card3_border", "100%");
-}
 
 function arrow_reset()
 {
@@ -84,32 +56,51 @@ function arrow_reset()
     })
 }
 
-colors.forEach(color => {
-    color.addEventListener("change", () => {
-        if(color.getAttribute("id") == "color_1") changePrimaryColor();
-        else if(color.getAttribute("id") == "color_2") changeSecondaryColor();
-        else if(color.getAttribute("id") == "color_3") changeThirdColor();
-    })
-})
 
-function changePrimaryColor()
-{
-    document.getElementById("reservation").style.setProperty("--primary_color", `${colors[0].value}`)
-    document.getElementById("faq").style.setProperty("--primary_color", `${colors[0].value}`)
-    document.getElementById("hero").style.setProperty("--primary_color", `${colors[0].value}`)
-    document.getElementById("main").style.setProperty("--primary_color", `${colors[0].value}`)
+const tabsBox = document.querySelector(".usluge"),
+allTabs = tabsBox.querySelectorAll(".card")
+
+let isDragging = false;
+let isHover = false;
+
+allTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+        tabsBox.querySelector(".active").classList.remove("active");
+        tab.classList.add("active");
+    });
+});
+
+const dragging = (e) => {
+    if(!isDragging) return;
+    tabsBox.classList.add("dragging");
+    tabsBox.scrollLeft -= e.movementX;
 }
-function changeSecondaryColor()
-{
-    document.getElementById("reservation").style.setProperty("--secondary_color", `${colors[1].value}`)
-    document.getElementById("faq").style.setProperty("--secondary_color", `${colors[1].value}`)
-    document.getElementById("hero").style.setProperty("--secondary_color", `${colors[1].value}`)
-    document.getElementById("main").style.setProperty("--secondary_color", `${colors[1].value}`)
+
+const dragStop = () => {
+    isDragging = false;
+    tabsBox.classList.remove("dragging");
+    autoScroll();
 }
-function changeThirdColor()
+
+function autoScroll()
 {
-    document.getElementById("reservation").style.setProperty("--third_color", `${colors[2].value}`)
-    document.getElementById("faq").style.setProperty("--third_color", `${colors[2].value}`)
-    document.getElementById("hero").style.setProperty("--third_color", `${colors[2].value}`)
-    document.getElementById("main").style.setProperty("--third_color", `${colors[2].value}`)
+    let maxScrollLeft = tabsBox.scrollWidth - tabsBox.clientWidth;
+    if(tabsBox.scrollLeft == maxScrollLeft) slideGap = -30;
+    else if(tabsBox.scrollLeft === 0) slideGap = 30;
+    tabsBox.scrollBy({
+        left: slideGap,
+        behavior: "smooth"
+    });
+    if(isDragging == false && isHover == false) setTimeout(autoScroll, 800);
 }
+const mouseLeave = () => {
+    isHover = false;
+    autoScroll();
+}
+autoScroll();
+tabsBox.addEventListener("mousedown", () => isDragging = true);
+tabsBox.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+tabsBox.addEventListener("mouseenter", () => isHover = true);
+tabsBox.addEventListener("mouseleave", mouseLeave);
+

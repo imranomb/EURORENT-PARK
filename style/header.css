@@ -9,6 +9,15 @@
 #main::-webkit-scrollbar {
     display: none;
   }
+::-webkit-scrollbar
+{
+    width: 12px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb
+{
+    background: #A72608
+}
 #main 
 {
     --primary_color: #090C02;
