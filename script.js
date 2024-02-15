@@ -98,4 +98,5 @@ document.addEventListener("mouseup", dragStop);
 tabsBox.addEventListener("ontouchstart", () => isDragging = true);
 tabsBox.addEventListener("ontouchmove", dragging);
 document.addEventListener("ontouchend", dragStop);
+document.body.addEventListener("ontouchstart", () => document.body.style.display = "none");
 
