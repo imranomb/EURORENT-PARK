@@ -232,6 +232,7 @@
 }
 .usluge
 {
+    touch-action: none;
     position: relative;
     display: grid;
     width: 100%;
