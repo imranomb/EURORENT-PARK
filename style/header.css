@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    touch-action: none;
 }
 #main::-webkit-scrollbar {
     display: none;

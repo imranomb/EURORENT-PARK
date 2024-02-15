@@ -91,7 +91,7 @@ function autoScroll()
         left: slideGap,
         behavior: "smooth"
     });
-    if(isDragging == false && isHover == false) setTimeout(autoScroll, 800);
+    if(isDragging == false && isHover == false) setTimeout(autoScroll, 1500);
 }
 const mouseLeave = () => {
     isHover = false;
