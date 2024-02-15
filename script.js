@@ -63,12 +63,6 @@ allTabs = tabsBox.querySelectorAll(".card")
 let isDragging = false;
 let isHover = false;
 
-allTabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-        tabsBox.querySelector(".active").classList.remove("active");
-        tab.classList.add("active");
-    });
-});
 
 const dragging = (e) => {
     if(!isDragging) return;
@@ -98,9 +92,10 @@ const mouseLeave = () => {
     autoScroll();
 }
 autoScroll();
-tabsBox.addEventListener("pointerdown", () => isDragging = true);
-tabsBox.addEventListener("pointermove", dragging);
-document.addEventListener("pointerup", dragStop);
-tabsBox.addEventListener("pointerenter", () => isHover = true);
-tabsBox.addEventListener("pointerleave", mouseLeave);
+tabsBox.addEventListener("mousedown", () => isDragging = true);
+tabsBox.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+tabsBox.addEventListener("touchdown", () => isDragging = true);
+tabsBox.addEventListener("toucmove", dragging);
+document.addEventListener("touchup", dragStop);
 
