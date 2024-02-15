@@ -98,9 +98,9 @@ const mouseLeave = () => {
     autoScroll();
 }
 autoScroll();
-tabsBox.addEventListener("mousedown", () => isDragging = true);
-tabsBox.addEventListener("mousemove", dragging);
-document.addEventListener("mouseup", dragStop);
-tabsBox.addEventListener("mouseenter", () => isHover = true);
-tabsBox.addEventListener("mouseleave", mouseLeave);
+tabsBox.addEventListener("pointerdown", () => isDragging = true);
+tabsBox.addEventListener("pointermove", dragging);
+document.addEventListener("pointerup", dragStop);
+tabsBox.addEventListener("pointerenter", () => isHover = true);
+tabsBox.addEventListener("pointerleave", mouseLeave);
 
