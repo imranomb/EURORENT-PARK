@@ -95,7 +95,7 @@ autoScroll();
 tabsBox.addEventListener("mousedown", () => isDragging = true);
 tabsBox.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragStop);
-tabsBox.addEventListener("touchdown", () => isDragging = true);
-tabsBox.addEventListener("toucmove", dragging);
-document.addEventListener("touchup", dragStop);
+tabsBox.addEventListener("ontouchstart", () => isDragging = true);
+tabsBox.addEventListener("ontouchmove", dragging);
+document.addEventListener("ontouchend", dragStop);
 
