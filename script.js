@@ -1,12 +1,14 @@
 let cards = document.querySelectorAll(".card");
-let descriptions = document.querySelectorAll(".card_description")
-let arrows = document.querySelectorAll(".arrow");
-let currentActive = 4;
-let colors = document.querySelectorAll(".color_c");
-let slidePath = 0;
-let slideGap = 40;
-
 let sections = document.querySelectorAll(".section");
+let ths = 1;
+
+thresholdSetter();
+
+function thresholdSetter()
+{
+    if(screen.width > 767) ths = 1;
+    else ths = 0;
+}
 
 const observer = new IntersectionObserver((obj) => {
     obj.forEach(entry => {
@@ -41,7 +43,7 @@ const observer = new IntersectionObserver((obj) => {
     })
 },
 {
-    threshold: 0
+    threshold: ths
 }
 )
 
@@ -49,12 +51,6 @@ sections.forEach(section => {
     observer.observe(section);
 })
 
-function arrow_reset()
-{
-    arrows.forEach(arrow => {
-        if(arrow.classList.contains("open")) arrow.classList.remove("open");
-    })
-}
 
 
 const tabsBox = document.querySelector(".usluge"),
@@ -62,7 +58,8 @@ allTabs = tabsBox.querySelectorAll(".card")
 
 let isDragging = false;
 let isHover = false;
-
+let slidePath = 0;
+let slideGap = 40;
 
 const dragging = (e) => {
     if(!isDragging) return;
@@ -96,6 +93,42 @@ tabsBox.addEventListener("mousedown", () => isDragging = true);
 tabsBox.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragStop);
 tabsBox.addEventListener("touchstart", () => isDragging = true);
-tabsBox.addEventListener("touchmove", dragging);
-document.addEventListener("touchend", dragStop);
+tabsBox.addEventListener("touchend", () => dragStop());
 
+
+let slides = ["../public/slider/parking.jpg", "../public/slider/airport.jpg", "../public/slider/cctv.jpg"]
+let slidesDesc = ["Slika našeg parkinga", "Sarajevski aerodrom", "Naša sigurnosna zaštita"];
+let slideCounter = 0;
+
+document.getElementById("right_arrow").addEventListener("click", () => {
+    slideCounter++;
+    if(slideCounter > 2) slideCounter = 0;
+    slideChange();
+})
+document.getElementById("left_arrow").addEventListener("click", () => {
+    slideCounter--;
+    if(slideCounter < 0) slideCounter = 2;
+    slideChange();
+})
+async function slideChange()
+{
+    const slideImage = document.getElementById("current");
+    slideImage.animate([{filter: "blur(0px)"}, {filter: "blur(3px)"}], 
+    {
+        fill: "forwards",
+        duration: 1000,
+        easing: "ease-in"
+    });
+    await changeImage();
+    slideImage.animate([{filter: "blur(3px)"}, {filter: "blur(0px)"}], 
+    {
+        fill: "forwards",
+        duration: 1000,
+        easing: "ease-out"
+    });
+}
+const changeImage = () => {
+    const slideImage = document.getElementById("current");
+    document.getElementById("slide_desc").innerText = slidesDesc[slideCounter];
+    slideImage.style.backgroundImage = `url(${slides[slideCounter]})`;
+}
