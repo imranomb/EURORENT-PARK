@@ -1,3 +1,7 @@
+html 
+{
+    scroll-behavior: smooth;
+}
 #hero 
 {
     --primary_color: #090C02;

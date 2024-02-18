@@ -10,6 +10,20 @@
     background-color: var(--primary_color);
     overflow: hidden;
 }
+#wave2
+{
+    display: none;
+    position: absolute;
+    width: 130%;
+    height: 300px;
+    background-image: url("../public/wave2.svg");
+    left: 0;
+    bottom: -100px;
+    opacity: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 #reservation h1 
 {
     font-size: 5.5rem;

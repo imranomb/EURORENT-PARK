@@ -35,6 +35,10 @@
     scroll-behavior: smooth;
     overflow-y: auto;
 }
+.mobile_header
+{
+    display: none;
+}
 .header
 {
     scroll-snap-align: center;

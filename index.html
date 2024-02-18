@@ -15,14 +15,36 @@
 </head>
 <body>
     <div id="main">
+        <div id="mh" class="mobile_header">
+            <div class="navbar">
+                <img id="ham" src="./public/menu_icon.png" width="64px" height="64px"/>
+                <ul class="navbar_ul">
+                    <li><a class="tag" href="#mh">POČETNA</a></li>
+                    <li><a class="tag" href="#hero">USLUGE</a></li>
+                    <li><a class="tag" href="#reservation">REZERVACIJA</a></li>
+                    <li><a class="tag" href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <span id="mobile_logo">EUROPARK</span>
+            <img id="x" src="./public/x.png" width="64px" height="64px"/>
+            <div class="billboard">
+                <div class="billboard_card"></div>
+                <img class="plane" src="./public/plane.png"/>
+                <h2 class="billboard_text">PARKIRAJ KOD NAS <br> I LETI BEZ BRIGE</h2>
+            </div>
+            <h1 class="header_text">NUDMIO VAM <span>NAJBOLJI</span> PARKING U SARAJEVU</h1>
+            <button id="mobile_button">REZERVIŠI</button>
+            <p id="mobile_desc">Naš parking vam nudi vrhunsku uslugu, koja garantuje potpunu bezbjednost vašeg vozila, odlične cijene i brz dogovor</p>
+            <div id="wave3"></div>
+        </div>
         <div class="header">
             <img class="wallpaper" src="public/header_photo.png"/>
             <div class="header_info">
                 <nav>
-                    <a href="#">POČETNA</a>
-                    <a href="#">USLUGE</a>
-                    <a href="#">REZERVACIJA</a>
-                    <a href="#">FAQ</a>
+                    <a href="#header">POČETNA</a>
+                    <a href="#hero">USLUGE</a>
+                    <a href="#reservation">REZERVACIJA</a>
+                    <a href="#faq">FAQ</a>
                 </nav>
                 <div class="header_content">
                     <img class="logo" src="public/logo.png"/>
@@ -128,7 +150,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="separator"></div>
+                    <div id="mobile_separator" class="separator"></div>
                     <div class="pricing" id="pricing">
                         <h2>CJENOVNIK</h2>
                         <h3>VIŠE POVJERENJA, MANJE NOVCA!</h3>
@@ -163,8 +185,9 @@
                         </div>
                         <p class="airport_p">Nakon što parkirate svoje auto naš tim će vas <strong>BESPLATNO</strong> prevući do aerodroma, također po vašem povratku, netko iz našeg tima će doći po vas i dovesti vas do vašeg auta.</p>
                     </div>
+                </div>
             </div>
-            </div>
+            <div id="wave2"></div>
         </div>
         <div id="faq" class="section">
             <div id="naslov4" class="naslov">

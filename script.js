@@ -76,8 +76,8 @@ const dragStop = () => {
 function autoScroll()
 {
     let maxScrollLeft = tabsBox.scrollWidth - tabsBox.clientWidth;
-    if(tabsBox.scrollLeft == maxScrollLeft) slideGap = -30;
-    else if(tabsBox.scrollLeft === 0) slideGap = 30;
+    if(tabsBox.scrollLeft >= maxScrollLeft) slideGap = -30;
+    else if(tabsBox.scrollLeft <= 0) slideGap = 30;
     tabsBox.scrollBy({
         left: slideGap,
         behavior: "smooth"
@@ -132,3 +132,11 @@ const changeImage = () => {
     document.getElementById("slide_desc").innerText = slidesDesc[slideCounter];
     slideImage.style.backgroundImage = `url(${slides[slideCounter]})`;
 }
+
+const navBar = document.querySelector(".navbar_ul");
+const ham = document.getElementById("ham");
+
+ham.addEventListener("click", () => {
+    navBar.classList.toggle("active");
+})
+
