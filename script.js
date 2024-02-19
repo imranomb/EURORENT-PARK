@@ -78,21 +78,25 @@ function autoScroll()
     let maxScrollLeft = tabsBox.scrollWidth - tabsBox.clientWidth;
     if(tabsBox.scrollLeft >= maxScrollLeft) slideGap = -30;
     else if(tabsBox.scrollLeft <= 0) slideGap = 30;
-    tabsBox.scrollBy({
-        left: slideGap,
-        behavior: "smooth"
-    });
-    if(isDragging == false && isHover == false) setTimeout(autoScroll, 1500);
+    if(isDragging == false && isHover == false) 
+    {
+        tabsBox.scrollBy({
+            left: slideGap,
+            behavior: "smooth"
+        });
+    }
+    setTimeout(autoScroll, 1500);
 }
 const mouseLeave = () => {
     isHover = false;
     autoScroll();
 }
+
 autoScroll();
 tabsBox.addEventListener("mousedown", () => isDragging = true);
 tabsBox.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragStop);
-tabsBox.addEventListener("touchstart", () => isDragging = true);
+tabsBox.addEventListener("touchmove", () => isDragging = true);
 tabsBox.addEventListener("touchend", () => dragStop());
 
 
