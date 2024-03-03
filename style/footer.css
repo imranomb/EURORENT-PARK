@@ -1,12 +1,83 @@
 #footer
 {
+    padding-top: 15px;
+    padding-bottom: 15px;
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 50px;
-    background-color: #040501;
-    display: grid;
-    place-items: center;
+    background-color: #0d212f;
     color: white;
+}
+.footer_container 
+{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+.f_h 
+{
+    border-bottom: 2px solid #22577a;
+}
+.footer_contact
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.3rem;
+}
+.f_s
+{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: bold;
+    gap: 7px;
+    line-height: 0%;
+}
+.f_btn 
+{
+    background-color: #22577a;
+    color: white;
+    font-size: 1rem;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.footer_nav
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.3rem;
+    & a 
+    {
+        color: white;
+        font-size: 1rem;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+.footer_rez 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.3rem;
+    & button 
+    {
+        font-size: 1rem;
+        padding: 5px;
+        background-color: #22577a;
+        color: white;
+        border: 0;
+    }
+}
+.copyright 
+{
+    font-size: 1.2rem;
+    font-weight: bold;
 }

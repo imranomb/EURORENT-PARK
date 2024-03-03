@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style/faq.css"/>
     <link rel="stylesheet" href="style/mobile.css"/>
     <link rel="stylesheet" href="style/footer.css"/>
+    <link rel="stylesheet" href="style/gallery.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
     <title>Document</title>
@@ -38,7 +39,29 @@
             <div id="wave3"></div>
         </div>
         <div class="header">
-            <img class="wallpaper" src="public/header_photo.png"/>
+            <div class="wallpaper">
+                <div class="wall" id="wall_1">
+                    <img class="wall_img" src="public/header_photo_1.jpg"/>
+                    <div class="wall_check">
+                        <img src="public/blue_check.png" width="30px" height="30px"/>
+                        <span>SIGURNOST</span>
+                    </div>
+                </div>
+                <div class="wall" id="wall_2">
+                    <img class="wall_img" src="public/header_photo_2.jpg"/>
+                    <div class="wall_check">
+                        <img src="public/blue_check.png" width="30px" height="30px"/>
+                        <span>SIGURNOST</span>
+                    </div>
+                </div>
+                <div class="wall" id="wall_3">
+                    <img class="wall_img" src="public/header_photo_3.jpg"/>
+                    <div class="wall_check">
+                        <img src="public/blue_check.png" width="30px" height="30px"/>
+                        <span>SIGURNOST</span>
+                    </div>
+                </div>
+            </div>
             <div class="header_info">
                 <nav>
                     <a href="#header">POČETNA</a>
@@ -47,25 +70,11 @@
                     <a href="#faq">FAQ</a>
                 </nav>
                 <div class="header_content">
-                    <img class="logo" src="public/logo.png"/>
+                    <img class="logo" src="public/blue_logo.png"/>
                     <p>Ukoliko ne znate gdje da ostavite vaše vozilo u Sarajevu mi smo <br>
                         vaše <strong>RJEŠENJE</strong>. Ogroman parking sa svim sigurnosnim <br>
                         mjerama otklonit će sve vaše brige.</p>
                     <button>PARKIRAJ ODMAH</button>
-                </div>
-                <div class="short_notice">
-                    <div class="short s1">
-                        <img src="public/check.png" width="20px" height="20px"/>
-                        <span>SIGURNOST</span>
-                    </div>
-                    <div class="short s2">
-                        <img src="public/check.png" width="20px" height="20px"/>
-                        <span>ODLIČNA LOKACIJA</span>
-                    </div>
-                    <div class="short s3">
-                        <img src="public/check.png" width="20px" height="20px"/>
-                        <span>VRHUNSKA CIJENA</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -77,48 +86,85 @@
                 <h1>ŠTA VAM NUDIMO?</h1>
             </div>
             <div class="hero_content">
-                <div class="usluge_x">
-                    <div class="gradiant" id="left"></div>
-                    <div class="usluge">
-                        <div class="card" id="card_1">
-                            <div class="icon_card">
-                                <img src="./public/money.png"/>
-                            </div>
-                            <h2>CIJENA</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugiat fuga dolor consequuntur..</p>
+                <div class="cards_row">
+                    <div class="card">
+                        <div class="icon">
+                            <img src="./public/lock.png" width="45px" height="45px">
+                            <div class="sep"></div>
                         </div>
-                        <div class="card" id="card_2">
-                            <div class="icon_card">
-                                <img src="./public/lock_icon.png"/>
-                            </div>
+                        <div class="text">
                             <h2>SIGURNOST</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugiat fuga dolor consequuntur..</p>
+                            <p>Posjedujemo vrhunsku sigurnosnu opremu koja će otkloniti sve vaše brige, profesionalno fizičko lice kao i sigurnosne kamere štite vas i vaše vozilo od bilo kakavih sumnjivih radnji.</p>
                         </div>
-                        <div class="card" id="card_3">
-                            <div class="icon_card">
-                                <img src="./public/highfive.png"/>
-                            </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <img src="./public/service.png" width="45px" height="45px">
+                            <div class="sep"></div>
+                        </div>
+                        <div class="text">
                             <h2>USLUGA</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugiat fuga dolor consequuntur..</p>
+                            <p>Naš tim će se pobrinuti da proces od rezervacije pa sve do vašeg ponovnog preuzimanja vozila prođe brzo i bez bilo kakvih komplikacija, te će vam biti na raspolaganju čitavo vrijeme.</p>
                         </div>
                     </div>
-                    <div class="gradiant" id="right"></div>
-                </div>
-                <div class="separator"></div>
-                <div id="slider" class="slider">
-                    <div id="current" class="current_slide"></div>
-                    <div class="slider_arrows">
-                        <img class="slider_arrow" id="left_arrow" src="public/slider/slider_arrow.png" width="48px" height="48px"/>
-                        <img class="slider_arrow" id="right_arrow" src="public/slider/right_arrow.png" width="48px" height="48px"/>
+                    <div class="card">
+                        <div class="icon">
+                            <img src="./public/price.png" width="45px" height="45px">
+                            <div class="sep"></div>
+                        </div>
+                        <div class="text">
+                            <h2>CIJENA</h2>
+                            <p>Dajemo vam najpovoljniju cijenu koja varira u zavisnosti od perioda ostanka vašeg vozila, duži vremenski period znači niža cijena.</p>
+                        </div>
                     </div>
-                    <div class="slider_desc">
-                        <h2 id="slide_desc">Slika 1</h2>
+                    <div class="card">
+                        <div class="icon">
+                            <img src="./public/location.png" width="45px" height="45px">
+                            <div class="sep"></div>
+                        </div>
+                        <div class="text">
+                            <h2>LOKACIJA</h2>
+                            <p>Nalazimo se na odličnoj lokaciji do koje je jako jednostavno doći, a i sam aerodrom je udaljen svega par minuta od nas.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <img src="./public/refferal.png" width="45px" height="45px">
+                            <div class="sep"></div>
+                        </div>
+                        <div class="text">
+                            <h2>REFERALNI SISTEM</h2>
+                            <p>Ukoliko nas neko posjeti po vašoj preporuci, ta osoba dobija dodatni popust, kao i vi kada sljedeći put budete koristili naše usluge.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <img src="./public/more.png" width="45px" height="45px">
+                            <div class="sep"></div>
+                        </div>
+                        <div class="text">
+                            <h2>DODATNE USLUGE</h2>
+                            <p>Pored usluge parkinga, dobivate i dvije besplatne usluge, prevoz od parkinga do aerodroma i mogućnost posmatranja našig sigurnosnih kamera u bilo kojem trenutku.</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div id="wave"></div>
         </div>
-        
+        <div id="gallery" class="section">
+            <div id="gallery_wave"></div>
+            <div id="current" class="photo"></div>
+            <div class="photo_gradiant"></div>
+            <div class="arrows">
+                <div id="arrow_left">
+                    <img src="./public/arrow_slide.png"/>
+                </div>
+                <div id="arrow_right">
+                    <img src="./public/arrow_slide.png"/>
+                </div>
+            </div>
+            <h2 id="slide_desc" class="gallery_heading">SLIKA 1</h2>   
+        </div>
         <div id="reservation" class="section">
             <div id="naslov3" class="naslov">
                 <h1>REZERVACIJE</h1>
@@ -180,7 +226,7 @@
                         <h2 id="free_transport">BESPLATAN PREVOZ DO AERODROMA</h2>
                         <div class="airport">
                             <img src="public/parking_icon.png" width="50px" height="50px" alt="">
-                            <span id="road" style="color: white;">- - - - - - - - - - - - - -</span>
+                            <span id="road">- - - - - - - - - - - - - -</span>
                             <img src="public/airport_icon.png" width="50px" height="50px">
                         </div>
                         <p class="airport_p">Nakon što parkirate svoje auto naš tim će vas <strong>BESPLATNO</strong> prevući do aerodroma, također po vašem povratku, netko iz našeg tima će doći po vas i dovesti vas do vašeg auta.</p>
@@ -226,7 +272,30 @@
                 </div>
             </div>
             <div id="footer">
-                <span>@Copyright EuroRent Park 2024.</span>
+                <div class="footer_container">
+                    <div class="footer_contact">
+                        <h2 class="f_h">KONTAKT</h2>
+                        <div class="f_s">
+                            <a href="#"><img src="public/ig.png" width="25px" height="25px"/></a>
+                            <span>INSTAGRAM</span>
+                        </div>
+                        <div class="f_s">
+                            <a href="#"><img src="public/fb.png" width="25px" height="25px"/></a>
+                            <span>FACEBOOK</span>
+                        </div>
+                    </div>
+                    <div class="footer_nav">
+                        <h2 class="f_h">NAVIGACIJA</h2>
+                        <a href="#">USLUGE</a>
+                        <a href="#">CIJENE</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                    <div class="footer_rez">
+                        <h2 class="f_h">REZERVACIJA</h2>
+                        <button>REZERVIŠI</button>
+                    </div>
+                    <span class="copyright">© EURO-PARK 2024</span>
+                </div>
             </div>
         </div>
     </div>

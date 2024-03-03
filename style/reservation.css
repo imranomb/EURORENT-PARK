@@ -1,12 +1,10 @@
 #reservation 
 {
-    --primary_color: #090C02;
-    --secondary_color: #A72608;
+    --primary_color: #efeeee;
+    --secondary_color: #22577a;
     --third_color: white;
-    scroll-snap-align: center;
     position: relative;
     width: 100%;
-    height: 100svh;
     background-color: var(--primary_color);
     overflow: hidden;
 }
@@ -27,7 +25,7 @@
 #reservation h1 
 {
     font-size: 5.5rem;
-    color: var(--third_color);
+    color: var(--secondary_color);
     margin-left: 50px;
     margin-top: 50px;
     position: relative;
@@ -45,6 +43,17 @@
     left: -30px;
     z-index: -1;
 }
+#reservation h1::before
+{
+    content: "REZERVACIJE";
+    position: absolute;
+    left: -4px;
+    top: 4px;
+    width: 100%;
+    height: 100%;
+    color: white;
+    z-index: 0;
+}
 .naslovx
 {
     position: absolute;
@@ -54,6 +63,8 @@
 }
 .reservation_content
 {
+    margin-top: 190px;
+    margin-bottom: 10px;
     height: 100%;
     position: relative;
     display: flex;
@@ -74,7 +85,7 @@
 }
 .contact_form h2 
 {
-    color: var(--third_color);
+    color: var(--secondary_color);
     font-weight: 900;
     font-size: 2.3rem;
 }
@@ -151,7 +162,7 @@ textarea
 {
     position: relative;
     text-decoration: none;
-    color: var(--third_color);
+    color: black;
 }
 .social a::before
 {
@@ -171,18 +182,18 @@ textarea
 .social_info
 {
     font-weight: 600;
-    color: var(--third_color);
+    color: black;
 }
 .social_media
 {
     display: flex;
-    color: var(--third_color);
+    color: black;
     font-weight: 600;
     gap: 0.5rem;
 }
 .social
 {
-    color: var(--third_color);
+    color: black;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -200,7 +211,7 @@ textarea
     gap: 1rem;
     & h2 
     {
-        color: var(--third_color);
+        color: var(--secondary_color);
         font-weight: 900;
         font-size: 2.3rem;
     }
@@ -285,6 +296,7 @@ textarea
 }
 #road
 {
+    color: var(--secondary_color);
     position: relative;
     overflow: hidden;
 }
@@ -294,13 +306,13 @@ textarea
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: #090C02;
+    background-color: #efeeee;
     animation: road_anim 3s infinite;
 }
 .airport_p 
 {
     max-width: 500px;
-    color: var(--third_color);
+    color: black;
 }
 @keyframes road_anim 
 {
