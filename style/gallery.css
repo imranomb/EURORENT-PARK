@@ -32,7 +32,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    background-image: url("../public/airportw.jpg");
+    background-image: url("https://images.pexels.com/photos/2220292/pexels-photo-2220292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-position: center;
     background-size: cover;
 }
@@ -52,10 +52,22 @@
     position: absolute;
     bottom: 3%;
     left: 21%;
-    background-color: #22577a;
     z-index: 51;
     color: white;
     font-size: 2.3rem;
+    overflow: hidden;
+}
+.slide_text_bck 
+{
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    background-color: #22577a;
+}
+#slide_desc
+{
+    z-index: 50;
 }
 .arrows 
 {
@@ -71,4 +83,24 @@
 #arrow_right 
 {
     rotate: 180deg;
+}
+#arrow_right, #arrow_left
+{
+    cursor: pointer;
+    transition: transform 300ms ease;
+    filter: drop-shadow(5px 5px 10px #000000);
+    &:hover
+    {
+        transform: translateX(-5px);
+        transition: transform 300ms ease;
+    }
+}
+@keyframes slide_in 
+{
+    form{
+        transform: translateX(-100%);
+    }to 
+    {
+        transform: translateX(0%);
+    }
 }

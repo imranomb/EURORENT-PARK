@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="style/hero.css"/>
     <link rel="stylesheet" href="style/reservation.css"/>
     <link rel="stylesheet" href="style/faq.css"/>
-    <link rel="stylesheet" href="style/mobile.css"/>
-    <link rel="stylesheet" href="style/footer.css"/>
     <link rel="stylesheet" href="style/gallery.css"/>
+    <link rel="stylesheet" href="style/footer.css"/>
+    <link rel="stylesheet" href="style/mobile.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
     <title>Document</title>
@@ -24,6 +24,10 @@
                     <li><a class="tag" href="#hero">USLUGE</a></li>
                     <li><a class="tag" href="#reservation">REZERVACIJA</a></li>
                     <li><a class="tag" href="#faq">FAQ</a></li>
+                    <li>
+                        <img src="./public/gps_dot.png" width="25px" height="25px">
+                        <a href="#">LOKACIJA</a>
+                    </li>
                 </ul>
             </div>
             <span id="mobile_logo">EUROPARK</span>
@@ -41,21 +45,21 @@
         <div class="header">
             <div class="wallpaper">
                 <div class="wall" id="wall_1">
-                    <img class="wall_img" src="public/header_photo_1.jpg"/>
+                    <img class="wall_img" src="public/h_1.jpg"/>
                     <div class="wall_check">
                         <img src="public/blue_check.png" width="30px" height="30px"/>
-                        <span>SIGURNOST</span>
+                        <span>BEZBJEDNO LETITE</span>
                     </div>
                 </div>
                 <div class="wall" id="wall_2">
-                    <img class="wall_img" src="public/header_photo_2.jpg"/>
+                    <img class="wall_img" src="public/h_2.jpg"/>
                     <div class="wall_check">
                         <img src="public/blue_check.png" width="30px" height="30px"/>
-                        <span>SIGURNOST</span>
+                        <span>VELIKI PARKING</span>
                     </div>
                 </div>
                 <div class="wall" id="wall_3">
-                    <img class="wall_img" src="public/header_photo_3.jpg"/>
+                    <img class="wall_img" src="public/h_3.jpg"/>
                     <div class="wall_check">
                         <img src="public/blue_check.png" width="30px" height="30px"/>
                         <span>SIGURNOST</span>
@@ -68,6 +72,10 @@
                     <a href="#hero">USLUGE</a>
                     <a href="#reservation">REZERVACIJA</a>
                     <a href="#faq">FAQ</a>
+                    <div class="nav_loc">
+                        <img src="./public/gps_dot.png" width="25px" height="25px">
+                        <a href="#">LOKACIJA</a>
+                    </div>
                 </nav>
                 <div class="header_content">
                     <img class="logo" src="public/blue_logo.png"/>
@@ -163,7 +171,11 @@
                     <img src="./public/arrow_slide.png"/>
                 </div>
             </div>
-            <h2 id="slide_desc" class="gallery_heading">SLIKA 1</h2>   
+            <div class="gallery_heading">
+                <div class="slide_text_bck">
+                    <h2 id="slide_desc">Slika našeg parkinga</h2>
+                </div>
+            </div>
         </div>
         <div id="reservation" class="section">
             <div id="naslov3" class="naslov">
@@ -275,14 +287,18 @@
                 <div class="footer_container">
                     <div class="footer_contact">
                         <h2 class="f_h">KONTAKT</h2>
-                        <div class="f_s">
-                            <a href="#"><img src="public/ig.png" width="25px" height="25px"/></a>
-                            <span>INSTAGRAM</span>
-                        </div>
-                        <div class="f_s">
-                            <a href="#"><img src="public/fb.png" width="25px" height="25px"/></a>
-                            <span>FACEBOOK</span>
-                        </div>
+                        <a style="text-decoration: none; color: white;" href="#">
+                            <div class="f_s">
+                                <img style="background-color: white; border-radius: 50%; padding: 3px;" src="public/ig.png" width="25px" height="25px"/>
+                                <span>INSTAGRAM</span>
+                            </div>
+                        </a>
+                        <a style="text-decoration: none; color: white;" href="#">
+                            <div class="f_s">
+                                <img style="background-color: white; border-radius: 50%; padding: 3px;" src="public/fb.png" width="25px" height="25px"/>
+                                <span>FACEBOOK</span>
+                            </div>
+                        </a>
                     </div>
                     <div class="footer_nav">
                         <h2 class="f_h">NAVIGACIJA</h2>
@@ -294,8 +310,19 @@
                         <h2 class="f_h">REZERVACIJA</h2>
                         <button>REZERVIŠI</button>
                     </div>
-                    <span class="copyright">© EURO-PARK 2024</span>
+                    <div class="footer_partner">
+                        <h2 class="f_h">PARTNERI</h2>
+                        <a href="https://euro-rent.ba/"><img src="https://euro-rent.ba/wp-content/uploads/2020/12/logo12.png" height="50px" width="90px"/></a>
+                    </div>
                 </div>
+                <div class="newsletter">
+                    <span>Upišite vaš mail kako bi bilo obavješteni o raličitim pogodnostima naše parking usluge!</span>
+                    <div class="subscribe">
+                        <input name="footer_mail" type="email" placeholder="Vaš email..."/>
+                        <button>PRIJAVI SE</button>
+                    </div>
+                </div>
+                <p style="text-align: center;">© Sva prava zadržava EURO-PARK 2024. godina</p>
             </div>
         </div>
     </div>

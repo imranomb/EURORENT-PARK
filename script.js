@@ -7,7 +7,7 @@ thresholdSetter();
 function thresholdSetter()
 {
     if(screen.width > 767) ths = 0.6;
-    else ths = 0.6;
+    else ths = 0.2;
 }
 
 const observer = new IntersectionObserver((obj) => {
@@ -17,12 +17,6 @@ const observer = new IntersectionObserver((obj) => {
             console.log("glicing")
             document.getElementById("naslov2").classList.toggle("turnOn");
             document.getElementById("wave").classList.toggle("turnOn");
-            cards.forEach(card => {
-                card.style.transitionDelay = `${transitionDelay}s`
-                card.classList.toggle("turnOn")
-                transitionDelay = transitionDelay + 0.3;
-                console.log("je")
-            })
             // document.getElementById("slider").classList.toggle("turnOn")
             observer.unobserve(entry.target);
         }
@@ -50,11 +44,26 @@ const observer = new IntersectionObserver((obj) => {
 }
 )
 
+const cardObserver = new IntersectionObserver((obj) => {
+    obj.forEach(entry => {
+        if(entry.isIntersecting)
+        {
+            entry.target.classList.toggle("turnOn")
+            cardObserver.unobserve(entry.target)
+            console.log("pof")
+        }
+    }, 
+    {
+        threshold: 1
+    })
+})
 
 sections.forEach(section => {
     observer.observe(section);
 })
-
+cards.forEach(card => {
+    cardObserver.observe(card)
+})
 
 // const tabsBox = document.querySelector(".usluge"),
 // allTabs = tabsBox.querySelectorAll(".card")
@@ -103,8 +112,9 @@ sections.forEach(section => {
 // tabsBox.addEventListener("touchend", () => dragStop());
 
 
-let slides = ["../public/airportw.jpg", "../public/airportw.jpg", "../public/airportw.jpg"]
+let slides = ["https://images.pexels.com/photos/2220292/pexels-photo-2220292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "../public/airportw.jpg", "https://images.pexels.com/photos/1381709/pexels-photo-1381709.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"]
 let slidesDesc = ["Slika našeg parkinga", "Sarajevski aerodrom", "Naša sigurnosna zaštita"];
+let descBck = document.querySelector(".slide_text_bck");
 let slideCounter = 0;
 
 document.getElementById("arrow_right").addEventListener("click", () => {
@@ -126,18 +136,33 @@ async function slideChange()
         duration: 1000,
         easing: "ease-in"
     });
+    descBck.animate([{transform: "translateX(0%)"}, {transform: "translateX(-100%)"}], {
+        fill: "forwards",
+        duration: 1000,
+        easing: "ease-in"
+    })
     await changeImage();
     slideImage.animate([{filter: "blur(3px)"}, {filter: "blur(0px)"}], 
     {
         fill: "forwards",
+        delay: 1000,
         duration: 1000,
         easing: "ease-out"
     });
+    descBck.animate([{transform: "translateX(-100%)"}, {transform: "translateX(0%)"}], {
+        fill: "forwards",
+        delay: 1200,
+        duration: 1000,
+        easing: "ease-in"
+    })
 }
 const changeImage = () => {
-    const slideImage = document.getElementById("current");
-    document.getElementById("slide_desc").innerText = slidesDesc[slideCounter];
-    slideImage.style.backgroundImage = `url(${slides[slideCounter]})`;
+    setTimeout(() => {
+        console.log("t")
+        const slideImage = document.getElementById("current");
+        document.getElementById("slide_desc").innerText = slidesDesc[slideCounter];
+        slideImage.style.backgroundImage = `url(${slides[slideCounter]})`;
+    }, 1300)
 }
 
 // const navBar = document.querySelector(".navbar_ul");

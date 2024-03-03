@@ -1,23 +1,27 @@
 #footer
 {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    position: absolute;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    position: relative;
     left: 0;
     bottom: 0;
+    z-index: 50;
     width: 100%;
-    background-color: #0d212f;
+    background-image: url("../public/footer_bck.png");
+    background-size: cover;
+    background-position: center;
     color: white;
 }
 .footer_container 
 {
+    z-index: 23;
     display: flex;
     justify-content: center;
     gap: 3rem;
 }
 .f_h 
 {
-    border-bottom: 2px solid #22577a;
+    border-bottom: 2px solid white;
 }
 .footer_contact
 {
@@ -72,12 +76,45 @@
         font-size: 1rem;
         padding: 5px;
         background-color: #22577a;
+        border: 2px solid white;    
         color: white;
-        border: 0;
+        font-weight: bold;
     }
 }
+.newsletter
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    & input 
+    {
+        border-radius: 5px;
+        padding: 15px;
+        background-color: white;
+        min-width: 300px;
+        border: 2px solid #22577a;
+        color: black;
+        font-weight: bold;
+    }
+    & button 
+    {
+        border-radius: 5px;
+        padding: 15px;
+        background-color: white;
+        border: 2px solid #22577a;
+        color: black;
+        font-weight: bold;
+    }
+}
+
 .copyright 
 {
     font-size: 1.2rem;
     font-weight: bold;
+}
+#footer p 
+{
+    margin-top: 10px;
 }

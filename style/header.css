@@ -48,7 +48,14 @@
     color: var(--third_color);
     justify-content: space-evenly;
     align-items: center;
-    gap: 50px;
+}
+.nav_loc 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 2px solid #22577a;
+    padding-left: 3px;
 }
 .wallpaper
 {
@@ -61,7 +68,7 @@
 .wall 
 {
     height: 120%;
-    width: 300px;
+    width: 270px;
     background-color: yellow;
     position: relative;
     overflow: hidden;
@@ -69,9 +76,10 @@
     rotate: 6deg;
     & .wall_img 
     {
-        width: 100%;
+        width: 150%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
         transition: all 500ms ease-out;
     }
     &:hover > .wall_img 
@@ -113,6 +121,13 @@
     animation: float_down;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
+    & img
+    {
+        animation: movement_anim;
+        animation-duration: 5000ms;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+    }
 }
 #wall_2
 {
@@ -121,6 +136,14 @@
     animation-duration: 500ms;
     animation-fill-mode: forwards;
     animation-delay: 500ms;
+    & img
+    {
+        animation: movement_anim;
+        animation-delay: 200ms;
+        animation-duration: 5000ms;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+    }
 }
 #wall_3
 {
@@ -129,6 +152,14 @@
     animation-duration: 500ms;
     animation-fill-mode: forwards;
     animation-delay: 1000ms;
+    & img
+    {
+        animation: movement_anim;
+        animation-delay: 400ms;
+        animation-duration: 5000ms;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+    }
 }
 .header button 
 {
@@ -283,5 +314,20 @@ nav a:hover::after
     100% 
     {
         transform: translateY(0%);
+    }
+}
+@keyframes movement_anim 
+{
+    0% 
+    {
+        transform: translateX(0%);
+    }
+    50%
+    {
+        transform: translateX(-15%);
+    }
+    100% 
+    {
+        transform: translateX(0%);
     }
 }
