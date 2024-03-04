@@ -3,11 +3,21 @@ let sections = document.querySelectorAll(".section");
 let ths = 1;
 let transitionDelay = 0.3;
 thresholdSetter();
+mobileHeaderSet();
 
 function thresholdSetter()
 {
     if(screen.width > 767) ths = 0.6;
     else ths = 0.2;
+}
+
+function mobileHeaderSet()
+{
+    const header = document.getElementById("bb");
+    if(screen.height < 750) 
+    {
+        header.classList.toggle("ss")
+    }
 }
 
 const observer = new IntersectionObserver((obj) => {
