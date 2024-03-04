@@ -14,7 +14,7 @@ function thresholdSetter()
 function mobileHeaderSet()
 {
     const header = document.getElementById("bb");
-    if(screen.height < 750) 
+    if(screen.height < 829) 
     {
         header.classList.toggle("ss")
     }
