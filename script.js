@@ -17,7 +17,6 @@ const observer = new IntersectionObserver((obj) => {
             console.log("glicing")
             document.getElementById("naslov2").classList.toggle("turnOn");
             document.getElementById("wave").classList.toggle("turnOn");
-            // document.getElementById("slider").classList.toggle("turnOn")
             observer.unobserve(entry.target);
         }
         else if(entry.target.getAttribute("id") == "reservation" && entry.isIntersecting)
@@ -50,12 +49,11 @@ const cardObserver = new IntersectionObserver((obj) => {
         {
             entry.target.classList.toggle("turnOn")
             cardObserver.unobserve(entry.target)
-            console.log("pof")
         }
-    }, 
-    {
-        threshold: 1
     })
+}, 
+{
+    threshold: 1
 })
 
 sections.forEach(section => {
@@ -165,10 +163,11 @@ const changeImage = () => {
     }, 1300)
 }
 
-// const navBar = document.querySelector(".navbar_ul");
-// const ham = document.getElementById("ham");
+const navBar = document.querySelector(".navbar_ul");
+const ham = document.getElementById("ham");
 
-// ham.addEventListener("click", () => {
-//     navBar.classList.toggle("active");
-// })
+ham.addEventListener("click", () => {
+    navBar.classList.toggle("active");
+    ham.style.backgroundImage = navBar.classList.contains("active") ? `url("../public/x.png")` : `url("../public/menu_icon.png")`
+})
 

@@ -19,25 +19,24 @@
       width: 100%;
       min-height: 100svh;
       overflow: hidden;
-      background-color: #090C02;
+      background-color: #D9D9D9;
    }
    #mobile_logo
    {
       position: absolute;
       left: 2%;
-      top: 2.5%;
+      top: 1%;
       opacity: 1;
       font-family: "Racing Sans One", sans-serif;
       font-size: 1.7rem;
       font-weight: 400;
       font-style: normal;
-      color: #A72608;
+      color: #22577a;
    }
    .navbar
    {
       z-index: 999;
       z-index: 10;
-      filter: drop-shadow(5px 5px 10px #000000);
       position: fixed;
       display: grid;
       place-items: end;
@@ -60,7 +59,7 @@
       & li 
       {
          padding-right: 50px;
-         border-bottom: 4px solid #A72608;
+         border-bottom: 4px solid #22577a;
          padding-top: 15px;
          padding-bottom: 15px;
          padding-left: 5px;
@@ -69,7 +68,7 @@
       & li a 
       {
          text-decoration: none;
-         color: #A72608;
+         color: #22577a;
          font-weight: bold;
          font-size: 1.3rem;
       }
@@ -96,8 +95,11 @@
    #ham
    {
       z-index: 999;
-      border-radius: 50%;
-      background-color: #D9D9D9;
+      width: 40px;
+      height: 40px;
+      background-image: url("../public/menu_icon.png");
+      background-position: center;
+      background-size: cover;
    }
    #x 
    {
@@ -110,74 +112,73 @@
    .billboard
    {
       position: relative;
-      margin-top: 50px;
-      width: 90%;
-      height: 200px;
-      border-radius: 10px;
-   }
-   .billboard_card 
-   {
-      animation: billboard_0 1500ms forwards;
-      position: absolute;
-      left: 0;
-      top: 0;
-      border-radius: 10px;
-      width: 100%;
-      height: 100%;
-      background-color: #D9D9D9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
    }
    .plane 
    {
-      opacity: 0;
-      animation-name: billboard_1;
-      animation-fill-mode: forwards;
-      animation-duration: 1000ms;
-      animation-delay: 1500ms;
-      position: absolute;
-      left: -5%;
-      height: 130px;
-      width: 110%;
+      animation: billboard_1 1s forwards ease-in;
    }
-   .billboard_text
+   #d_c
+   {
+      display: grid;
+      grid-template-rows: 0fr;
+      animation: gridAnim;
+      animation-duration: 1000ms;
+      animation-delay: 1000ms;
+      animation-fill-mode: forwards;
+   }
+   #d_c > div 
+   {
+      overflow: hidden;
+   }
+   #d_c_2
+   {
+      display: grid;
+      grid-template-rows: 0fr;
+      animation: gridAnim;
+      animation-duration: 1000ms;
+      animation-delay: 2500ms;
+      animation-fill-mode: forwards;
+   }
+   #d_c_2 > div 
+   {
+      overflow: hidden;
+   }
+   .mhr 
    {
       opacity: 0;
-      animation-name: billboard_1;
-      animation-fill-mode: forwards;
-      animation-duration: 1000ms;
-      animation-delay: 1700ms;
-      position: absolute;
-      bottom: 2%;
-      left: 2%;
-   }
-   .header_text
-   {
-      opacity: 0;
-      animation-name: billboard_0;
-      animation-fill-mode: forwards;
-      animation-duration: 1000ms;
-      animation-delay: 2000ms;
-      color: white;
-      width: 90%;
-      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
       text-align: center;
-      & span 
-      {
-         color: #A72608;
-      }
+      animation: billboard_0;
+      animation-duration: 1000ms;
+      animation-delay: 1800ms;
+      animation-fill-mode: forwards;
+   }
+   .deal 
+   {
+      opacity: 0;
+      animation: billboard_1;
+      animation-duration: 1000ms;
+      animation-delay: 3200ms;
+      animation-fill-mode: forwards;
    }
    #mobile_button
    {
-      opacity: 0;
-      animation-name: billboard_0;
-      animation-fill-mode: forwards;
-      animation-duration: 1000ms;
-      animation-delay: 2000ms;
+      opacity: 1;
       width: 180px;
       height: 50px;
       font-size: 1.5rem;
       color: white;
       font-weight: bold;
-      background-color: #A72608;
+      background-color: #22577a;
       border: 2px solid white;
       margin-top: 10px;
    }
@@ -306,7 +307,7 @@
       display: block;
       width: 90%;
       height: 5px;
-      border: 1px dotted #A72608;
+      border: 1px dotted #22577a;
      }
      form input, textarea
      {
@@ -415,4 +416,12 @@
       opacity: 1;
       transform: translateX(0px);
    }
+}
+@keyframes gridAnim 
+{
+   from{
+      grid-template-rows: 0fr;
+   }to{
+      grid-template-rows: 1fr;
+   }  
 }
