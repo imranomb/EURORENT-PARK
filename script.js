@@ -178,6 +178,6 @@ const ham = document.getElementById("ham");
 
 ham.addEventListener("click", () => {
     navBar.classList.toggle("active");
-    ham.style.backgroundImage = navBar.classList.contains("active") ? `url("../public/x.png")` : `url("../public/menu_icon.png")`
+    ham.style.backgroundImage = navBar.classList.contains("active") ? `url("https://raw.githubusercontent.com/imranomb/EURORENT-PARK/main/public/x.png")` : `url("https://raw.githubusercontent.com/imranomb/EURORENT-PARK/main/public/menu_icon.png")`
 })
 
